@@ -1,0 +1,606 @@
+// Froala and dependencies
+@import url(asset-path("froala_editor.min.css"));
+@import url(asset-path("froala_style.min.css"));
+@import url(asset-path("plugins/table.min.css"));
+@import url(asset-path("plugins/image.min.css"));
+@import url(asset-path("plugins/fullscreen.min.css"));
+@import url(asset-path("plugins/video.min.css"));
+@import url(asset-path("plugins/colors.min.css"));
+@import url(asset-path("introjs.min.css"));
+@import url(asset-path("flatpickr.min.css"));
+@import url(asset-path("dropzone.min.css"));
+@import "font-awesome";
+
+@import "colors";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "standalone_layout";
+@import "typeahead";
+@import "flatpickr-overrides";
+@import "util";
+@import "embedded-bookings";
+@import "dropzone";
+@import "learner/dashboard";
+@import "learner/feedback";
+@import "shared/avetmiss";
+@import "shared/review_evidence";
+@import "shared/upload_evidence";
+@import "shared/evidences";
+@import "shared/students_search";
+@import "shared/processing";
+@import "partner/bookings";
+@import "courses";
+@import "shared/unit_process_version";
+@import "admin/video_conference_criteria";
+@import "fullcalendar.min";
+@import "shared/shared";
+@import "trainer/trainer";
+@import "trainer/references";
+@import "trainer/tae_qualifications";
+@import "trainer/profile-file-upload";
+@import "trainer/certificates";
+@import "trainer/unit_applications";
+@import 'trainer/trainer_application';
+@import "admin/enrol_report";
+@import "admin/white_card_number";
+@import "admin/unit";
+@import 'admin/students';
+@import 'selectize.bootstrap3';
+@import "admin/submissions";
+@import "admin/feedback";
+@import 'partner/expression_interest';
+@import "partner/profile";
+@import 'partner/partnership_application';
+@import 'partner/dashboard';
+@import 'partner/clients';
+@import "admin/applications";
+@import "admin/service_agreements";
+@import 'partner/trainer_invitations';
+@import 'admin/extension_of_scope';
+@import 'admin/internal_checklist';
+@import 'admin/dashboard';
+@import 'admin/tasks';
+@import 'client/divisions';
+@import 'client/managers';
+@import 'flippingbook';
+
+.navbar-default .navbar-nav .open {
+    a, a:hover, a:focus {
+        background-color: darken($app-blue, 5);
+        color: #8b9fb5;
+    }
+
+    .dropdown-menu {
+        background-color: $app-blue;
+        left: -2px;
+
+        > li > a {
+            background-color: $app-blue;
+            color: #e6e6e6;
+            font-size: smaller;
+            &:hover, &:active {
+                color: #8b9fb5;
+                background-color: darken($app-blue, 5);
+            }
+        }
+    }
+}
+
+.page-container {
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media (max-width: 768px) {
+	    padding-top: 50px;
+    }
+}
+
+.app-navbar {
+    background-color: $app-blue;
+    text-transform: uppercase;
+    color: #cecece;
+    font-size: smaller;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .question-view {
+	.fr-video {
+	    iframe {
+		width: 95% !important;
+		height: 200px !important;
+	    }
+	}
+    }
+    .slideshow-view {
+	.fr-video {
+	    iframe {
+		width: 95% !important;
+		height: 200px !important;
+	    }
+	}
+    }
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.highlight-nav {
+    color: #ffc206 !important;
+}
+
+.app-navbar a {
+    color: #cecece;
+}
+.app-navbar a:hover {
+    color: #cecece;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #8b9fb5;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #edf6ff;
+    background-color: rgb(50, 76, 103);
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #e6e6e6;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: #edf6ff;
+    background-color: rgb(50, 76, 103);
+}
+
+.btn-primary {
+    background-color: #133369;
+    border-color: #405f94;
+}
+
+.large-course-thumb {
+    box-shadow: 3px 3px 5px #efefef;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &.lg-margin-top {
+	margin-top: 30px;
+    }
+
+    &.lg-margin-bottom {
+	margin-bottom: 20px;
+    }
+}
+
+@mixin header-font-size($property, $base_em_size) {
+    #{$property} {
+	font-size: $base_em_size;
+
+	@media (max-width: 768px) {
+	    font-size: $base_em_size * 0.71;
+	}
+    }
+}
+
+@include header-font-size(h1, 2.5em);
+@include header-font-size(h2, 2.1em);
+@include header-font-size(h3, 1.7em);
+
+body {
+    background-color: #ffffff;
+}
+
+.page-header {
+    @media (max-width: 768px) {
+	margin-top: 20px;
+    }
+}
+
+.btn-toolbar {
+    .pull-right, .pull-left {
+	.btn, .btn-group, .input-group {
+	    margin-left: 5px;
+	}
+    }
+}
+
+.embed-responsive {
+    margin-bottom: 15px;
+}
+
+.heading-padded {
+    padding-top: 8px;
+}
+
+.admin-form {
+    width: 70%;
+    margin: 0 auto;
+    .control-label {
+	text-align: left;
+    }
+}
+
+.course-content {
+    padding: 10px;
+    background-color: #e5efff;
+    cursor: move;
+}
+
+.course-price {
+    background-color: #e5efff;
+    font-weight: bold;
+    font-size: medium;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+}
+
+.course-price p {
+    margin-bottom: 0px;
+}
+
+.course-footer-block {
+    height: 50px;
+}
+
+.course-description-block {
+    font-size: small;
+    height: 80px;
+}
+.course-name-block {
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.course-content:hover {
+    background-color: #cadcfd;
+}
+
+.tab-content {
+    margin-top: 40px;
+}
+
+.logo {
+    margin: 8px;
+    margin-left: 0px;
+}
+
+.public-course {
+    height: 250px;
+}
+
+// Mobile Learning CSS
+
+.mobile-learning {
+    padding-top: 0px;
+    background-color: #e6e6e6;
+}
+
+.learning-page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.grey-info-box {
+    padding: 2px 2px 2px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-color: #e2e2e2;
+    border-width: thin;
+    background-color: #f1f1f1;
+    display: block;
+    box-shadow: 2px 2px 1px #eae7e7;
+    border-style: solid;
+}
+
+.slideshow-view {
+    padding: 2px 2px 15px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-color: #e2e2e2;
+    border-width: thin;
+    background-color: #fffefe;
+    display: block;
+    box-shadow: 2px 2px 1px #eae7e7;
+    border-style: solid;
+}
+
+.incorrect-icon {
+    color: crimson;
+}
+.correct-icon {
+    color: #45c510;
+}
+.unattempted-icon {
+    color: #c1c1c1;
+}
+.mark-icon {
+    color: #c1c1c1;
+}
+.quiz-icon {
+    font-size: 20px;
+}
+
+.vcenter-alert-text {
+    margin-top: 7px
+}
+
+.option-text {
+    font-weight: 400;
+}
+
+.disabled-text {
+    color: #dcdbdb;
+}
+
+#information-icon {
+    font-size: x-large;
+    color: #c3c3c3;
+    margin-top: 5px;
+}
+
+#information-icon:hover {
+    color: $app-blue;
+    cursor: pointer;
+}
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+.congrats-jumbo {
+    background-color: $app-blue;
+    color: white;
+}
+
+@media only screen and (max-width : 480px) {
+    .camera_tag, .cameratag_photobooth_container {
+	    width: 100% !important;
+    }
+}
+
+.btn-space {
+    margin-right: 5px;
+}
+
+.content-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.guest-register-box {
+    background-color: whitesmoke;
+    padding: 50px;
+    border-style: solid;
+    border-color: #d4cfcf;
+    border-width: thin;
+}
+
+.course-register-class {
+    padding: 12px;
+    background-color: #fafafb;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+.course-register-address {
+    color: #8a8a8a;
+    font-weight: 300;
+    font-size: smaller;
+    padding-left: 6px;
+}
+
+.slide-button {
+    background-color: #e84504;
+    color: white;
+}
+
+.slide-button:hover {
+    background-color: #ff6326;
+    color: white;
+}
+
+.slide-button:hover:active {
+    background-color: #ff6326;
+    color: white;
+}
+
+.rego-course-dates {
+    padding: 0px;
+    margin: 0px
+}
+
+.avetmiss-form-header {
+    padding: 10px;
+    background-color: #fdfdfd;
+}
+
+.normal-font-weight {
+    font-weight: normal;
+}
+
+.table.valign-cells {
+    tr {
+        td {
+            vertical-align: middle;
+        }
+    }
+}
+
+.eway-button {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #f2c45a !important;
+
+    span {
+        color: black !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        background-color: #f2c45a !important;
+        padding: 0 30px !important;
+    }
+}
+
+.row.eway-logo {
+    flex: 1;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+.alert-area {
+    @extend .row;
+    padding: 15px;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+
+    .alert-area-icon {
+        display: flex;
+
+        i {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+    }
+
+    &.warn {
+        color: white;
+        background-color: #F9B232;
+    }
+
+    &.success {
+        color: white;
+        background-color: $background-notice-green;
+    }
+
+    &.danger {
+        color: white;
+        background-color: #DF1B36;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 1.5em;
+    }
+}
+.payment-form{
+    text-align: center;
+}
+
+.cardimage {
+    width: 51px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0 3px;
+
+    &.visa {
+        display: inline-block;
+        background-image: image-url("visa");
+    }
+
+    &.mastercard {
+        display: inline-block;
+        background-image: image-url("mastercard");
+    }
+}
+
+.cvv-image {
+    @media (min-width: 768px) {
+        padding-left: 0;
+    }
+}
+.flex-column{
+    display: flex;
+    flex-direction: column
+}
+.flex-row{
+    display: flex;
+    flex-direction: row
+}
+.flex-align-left{
+    align-items: left
+}
+.flex-align-center{
+    align-items: center;
+}
+.btn-jumbo {
+    background-color: white;
+    box-shadow: 1px 3px 4px rgba(33, 5, 70, 0.2);
+    color: #0d63b6;
+    border: 1px solid #f4f4f4;
+    font-weight: bold;
+    padding: 5px 20px;
+
+    &:active, &:focus {
+        background-color: #0d63b6;
+        color: white;
+        border: 1px solid #0d63b6;
+    }
+}

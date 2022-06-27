@@ -1,0 +1,23 @@
+.dropzone {
+    border: 1px dashed #ccc;
+    background-color: #fcfcfc;
+}
+
+.dropzone-large {
+    .dz-upload-file {
+        @extend .btn-jumbo;
+    }
+
+    border: 2px dashed $app-blue;
+    background-color: white;
+    color: $app-blue;
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        font-size: 80%;
+        margin-top: 0;
+    }
+}

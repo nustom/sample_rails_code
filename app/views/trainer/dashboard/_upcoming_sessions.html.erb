@@ -1,0 +1,22 @@
+<% upcoming_assessions.each do |session_constructor| %>
+<% session = session_constructor.video_session %>
+<tr id="assessment-session-<%= session.id %>">
+  <td><%= session.student_name %></td>
+  <td><%= session.time_from_start %></td>
+  <td><%= session.course_name %></td>
+  <td>
+    <% if session_constructor.previous_not_competent_sessions.any? %>
+      <%= link_to 'Previous Feedback', '#', 
+      data: { toggle: 'modal', target: "#previous_feedback_#{session.id}"} %>
+      <%= render 'not_competent_modal', session: session, previous_not_competent_sessions: session_constructor.previous_not_competent_sessions, student_name: session.student_name %>
+    <% end%>
+  </td>
+  <td>
+    <%= link_to 'Open', trainer_video_session_path(session), class: 'btn btn-sm btn-success' %>
+    <% unless session.start_in_ten_minutes? %>
+      <%= link_to 'Cancel', cancel_session_trainer_video_session_path(session), class: 'btn btn-sm btn-danger',
+      id: "cancel_session_#{session.id}", method: :patch %>
+    <% end %>
+  </td>
+</tr>
+<% end %>

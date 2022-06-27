@@ -1,0 +1,17 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="previous_feedback_<%= session.id %>">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Previous feedback from Assessors</h3>
+        </div>
+        <div class="modal-body">
+          <% previous_not_competent_sessions.each do |session| %>
+            <%= student_name %> was marked <b class='text-danger'>Not Competent</b> on <b><%= session.updated_at.to_s(:au_date) %></b>
+            <div class='well'>
+              <%= session.feedback %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

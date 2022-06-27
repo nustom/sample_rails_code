@@ -1,0 +1,35 @@
+body.standalone-layout {
+  padding: 0;
+  margin: 0;
+  background-image: radial-gradient(circle at left, #5EC0FF 1%, #232a79 100%);
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+  }
+
+  .standalone-container {
+    background-color: #fff;
+    background-color: #f6f6f6;
+    max-width: 900px;
+    @media (min-width: 768px) {
+      margin: 120px auto;
+    }
+
+    .input-panel {
+      background-color: white;
+      padding: 40px;
+
+      .btn-proceed {
+        padding: 6px 25px;
+      }
+    }
+
+    .info-panel {
+      padding: 40px;
+
+      .logo {
+        width: 200px;
+      }
+    }
+  }
+}

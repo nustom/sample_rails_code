@@ -1,0 +1,40 @@
+<div class='page-header'>
+  <h2>Trainer Dashboard</h2>
+</div>
+<%= render 'partner_invitations', partner_invitations: @dashboard_facade.partner_invitations %>
+
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to 'My Availability', trainer_instructor_availabilities_path, class: 'btn btn-success' %>
+  </div>
+  <div class="col-md-10">
+    <%= render partial: 'shared/user_timezone' %>
+  </div>
+</div>
+
+<div class='upcoming_assessment_sessions'>
+    <br/>
+    
+  <p><b>Upcoming Assessment Sessions</b></p>
+  
+  <% if @dashboard_facade.upcoming_assessions.length > 0 %>
+  <table class='table' id="assessment-sessions">
+    <thead>
+      <tr>
+        <td>Student</td>
+        <td>Time</td>
+        <td>Course</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render 'upcoming_sessions', upcoming_assessions: @dashboard_facade.upcoming_assessions %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-info">
+      There are no upcoming sessions.
+  </div>
+<% end %>
+</div>

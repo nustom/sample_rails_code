@@ -1,0 +1,21 @@
+<% partner_invitations.each do |invitation| %>
+<div class='well partner-invotations-block'>
+  <div class='row'>
+    <div class='col-md-1'>
+      <i class='fa fa-exclamation invitation-alert-icon'></i>
+    </div>
+    <div class='col-md-11'>
+      <h3>Action Required</h3>
+      <p class='partner-request'><b><%= invitation.partnership.company_name %></b> has requested for you to join their business</p>
+      <div>
+        <%= link_to "Join #{invitation.partnership.company_name}", trainer_accept_invitation_path(invitation_id: invitation.id),
+        method: :post, class: 'btn btn-success' %>
+        <%= link_to 'Decline', trainer_decline_invitation_path(invitation_id: invitation.id),
+        method: :post, class: 'btn btn-danger' %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br/>
+<% end %>

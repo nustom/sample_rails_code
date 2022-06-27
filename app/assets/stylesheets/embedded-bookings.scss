@@ -1,0 +1,15 @@
+.has-session {
+  background-color: rgb(50, 76, 103) !important;
+  color: white;
+}
+
+.embedded-calendars {
+  .nextMonthDay, .prevMonthDay {
+    visibility: hidden;
+  }
+
+  .flatpickr-day.disabled {
+    text-decoration: none;
+    color: #393939;
+  }
+}
